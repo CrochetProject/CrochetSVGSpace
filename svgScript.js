@@ -6,7 +6,7 @@ const chain = document.getElementsByClassName('chain');
 const doubleStitch = document.getElementsByClassName('doubleStitch');
 const slipSt = document.getElementsByClassName('slipSt');
 
-chain.addEventListener
+// chain.addEventListener
 
 
 
