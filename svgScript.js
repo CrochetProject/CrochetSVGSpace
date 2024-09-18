@@ -1,24 +1,29 @@
-// const selfie = document.querySelector( '.surface' );
-// const mask = document.querySelector( '.mask-shape' );
-// const coords = selfie.createSVGPoint();
-//
-//
-// console.log( selfie.value);
 
 
-const circle = document.getElementById('circle');
-let pos;
+
+
+const chain = document.getElementsByClassName('chain');
+const doubleStitch = document.getElementsByClassName('doubleStitch');
+const slipSt = document.getElementsByClassName('slipSt');
+
+chain.addEventListener
+
+
+
+const info = document.getElementById('info');
 document.addEventListener('mousemove', (e) => {
 
-    const height = circle.offsetHeight;
-    const width = circle.offsetWidth;
+    const height = info.offsetHeight;
+    const width = info.offsetWidth;
+    console.log(width); //sizing of div#info.info
+    console.log(height);
     // pos= `(${pageX}, ${pageY})`;
 
-    console.log(height);
+
 
     setTimeout(() => {
-        circle.style.left = `${e.clientX - width/2}px`;
-        circle.style. top = `${e.clientY - height/2}px`;
+        info.style.left = `${e.clientX + width/2}px`;
+        info.style.top = `${e.clientY - height}px`;
 
     }, 20);
 });
@@ -27,18 +32,4 @@ document.addEventListener('mousemove', (e) => {
 
 
 
-
-// let pos;
-// document.addEventListener(
-//     'mousemove', ({pageX, pageY}) => { pos= `(${pageX}, ${pageY})`;}
-// );
-
-
-
-// let getCoords = ( e, svg ) => {
-//     coords.x = e.clientX;
-//     coords.y = e.clientY;
-//
-//     return coords.matrixTransform( svg.getScreenCTM().inverse() );
-// }
 
