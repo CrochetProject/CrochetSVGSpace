@@ -20,6 +20,11 @@ svg {
 /*    fill: blue;*/
 /*}*/
 
+#yarnSVG{
+    width: auto;
+    height: auto;
+}
+
 .info {
     z-index: 5;
     position: fixed;

@@ -637,21 +637,45 @@
         </g>
     </svg>
 
-    <div id="yarn"></div>
+    <div onload="animation()" id="yarn"></div>
 
     <script>
         var yarn = Snap("#yarn");
 
-        Snap.load("yarnball.svg", function(data){
+        Snap.load("yarnball2.svg", function(data){
             yarn.append(data);
+
 
             var ball = yarn.select("#ball");
             ball.attr({
                 fill: "#8E9AAF",
                 stroke: "#707F99",
-                strokeWidth: .5
+                strokeWidth: .5,
             });
+            ball.transform("t50,0");
 
+            var myMatrix = new Snap.Matrix();
+            myMatrix.scale(1.1,.9);
+            myMatrix.translate(45,75);
+
+            var myInvertedMatrix =new Snap.Matrix();
+            myInvertedMatrix.scale(1,1);
+            myInvertedMatrix.translate(50,50);
+
+            var myMatrix2 = new Snap.Matrix();
+            myMatrix2.rotate(180);
+            // myMatrix2.translate(50,60);
+
+            var animating = true;
+                if( animating ) {
+                    ball.animate({transform: 't50,50'}, 1000, mina.easeout, function () {
+                        ball.animate({transform: myMatrix}, 100, mina.bounce, function () {
+                            ball.animate({transform: myInvertedMatrix}, 100, function () {
+                                ball.animate({transform: 't50,0'}, 1000);
+                            });
+                        });
+                    });
+                }
         });
     </script>
 
